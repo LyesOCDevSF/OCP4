@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Simple brute force implementation
@@ -23,17 +25,25 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	}
 	
 	@Override
-	public List<String> GetSymptoms() {
-		ArrayList<String> result = new ArrayList<String>();
-		
+	 public  Map<String,Symptom> getSymptoms() {
+		 Map<String,Symptom> result =  new TreeMap<>(); //ranger par order alphebetique
+
+			
 		if (filepath != null) {
 			try {
-				BufferedReader reader = new BufferedReader (new FileReader(filepath));
-				String line = reader.readLine();
 				
-				while (line != null) {
-					result.add(line);
-					line = reader.readLine();
+				BufferedReader reader = new BufferedReader (new FileReader(filepath));
+				
+				String symptom = reader.readLine();
+				
+				
+				while (symptom!= null) {
+					if(result.containsKey(symptom)){
+						result.get(symptom).incrementOccurence();
+					}else{
+						result.put(symptom, new Symptom(symptom,1));
+					}
+					symptom = reader.readLine();
 				}
 				reader.close();
 			} catch (IOException e) {
@@ -45,3 +55,4 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	}
 
 }
+
