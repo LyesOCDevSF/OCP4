@@ -3,8 +3,8 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+/*import java.util.ArrayList;
+import java.util.List;*/
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -12,7 +12,7 @@ import java.util.TreeMap;
  * Simple brute force implementation
  *
  */
-public class ReadSymptomDataFromFile implements ISymptomReader {
+public class ReadSymptomDataFromFile implements ISymptomReader { // 
 
 	private String filepath;
 	
@@ -20,11 +20,11 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
-	public ReadSymptomDataFromFile (String filepath) {
+	public ReadSymptomDataFromFile (String filepath) { // builder contruit une instance dans la methode
 		this.filepath = filepath;
 	}
 	
-	@Override
+	@Override // surcharge de la classe dans l'interface qui a été implémentée  
 	 public  Map<String,Symptom> getSymptoms() {
 		 Map<String,Symptom> result =  new TreeMap<>(); //ranger par order alphebetique
 
