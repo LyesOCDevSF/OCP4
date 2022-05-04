@@ -5,6 +5,10 @@ import java.util.Map;
 
 public class AnalyticsCounter { // compter 
 	
+	/**
+	 * @param args
+	 */
+	
 	public static void main(String args[]){
 
 		// on instancie la classe ReadSymptomDataFromFile
