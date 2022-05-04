@@ -20,6 +20,9 @@ public interface ISymptomReader { // création d'une interface
 	 */
 	//Interface Map qui permet de definir le prototype de la méthode getsymptom();
 	//chaque symptomes (String) est une clé invariable et son nombre d'occurence comme une variable
+	/**
+	 * @return
+	 */
 	public  Map<String,Symptom> getSymptoms(); 
 	
 }
