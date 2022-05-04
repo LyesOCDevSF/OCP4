@@ -24,6 +24,15 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		this.filepath = filepath;
 	}
 	
+	/**
+	 *
+	 */
+	/**
+	 *
+	 */
+	/**
+	 *
+	 */
 	@Override // surcharge de la classe dans l'interface qui a été implémentée  
 	 public  Map<String,Symptom> getSymptoms() {
 		 Map<String,Symptom> result =  new TreeMap<>(); //ranger par order alphebetique 
