@@ -3,13 +3,25 @@ package com.hemebiotech.analytics;
 import java.io.FileWriter;
 import java.util.Map;
 
+/**
+ * @author 33698
+ *
+ */
+
+ 
 public class WriterSymptom implements SymptomWriterInterface  {// la class implémente l'interface ce qui lui permet d'utliser sa méthode 
+	
+	/**
+	 *
+	 */
 	
 	@Override // surcharge de la classe 
 	public void writeSymptom( Map<String,Symptom> result) {
+		
 		// TODO Auto-generated method stub	
 		try {  //try catch pour capturer les exeptions s'il y en a 
 			//pour chaque nouveau symtom a écrire dans le fichier "result.out"
+			
 			     FileWriter writer = new FileWriter ("result.out");
 			     
 				 for (String symptom :result.keySet()) { // boucle for 
