@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 
+import java.util.List;
 import java.util.Map;
 
 public class AnalyticsCounter { // compter 
@@ -17,10 +18,12 @@ public class AnalyticsCounter { // compter
 		// on instancie la classe WriterSymptom
 		WriterSymptom instanceWriterSymptom= new WriterSymptom(); 
 		// 
-		Map<String,Symptom> result = instanceReadSymptom.getSymptoms(); 
+		List<String> result = instanceReadSymptom.getSymptoms(); 
+		Map<String,Symptom> resultCount = instanceReadSymptom.countSymptoms(result);
 		// on appelle la méthode getsymptom() pour récuperer le resultat de la lecture du fichier  et on le met dans la variable result.
+		// on compte les symptomes avec la méthode countsymptom()
 		 
-		instanceWriterSymptom.writeSymptom(result); 
+		instanceWriterSymptom.writeSymptom(resultCount); 
 		// on appelle la méthode writersymptom pour écrire le résultat dans le fichier result.out
 	}
 }
